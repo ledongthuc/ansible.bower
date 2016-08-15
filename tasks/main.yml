@@ -24,4 +24,4 @@
     relative_execpath: "{{ item.relative_execpath|default(omit) }}"
     state: "{{ item.state|default(omit) }}"
     version: "{{ item.version|default(omit) }}"
-  with_items: {{ bower_packages }}
+  with_items: "{{ bower_packages }}"
