@@ -14,9 +14,9 @@ Requirements
 Role Variables
 --------------
 
-  | Name          | Default          | Description  |
-  | ------------- |:---------------- |:------------ |
-  | bower_packages  | [] (empty list)  | List packages that you want to install. It supports bower.json and package's name |
+| Name            | Default          | Description  |
+| --------------- |:---------------- |:------------ |
+| bower_packages  | [] (empty list)  | List packages that you want to install. It supports bower.json and package's name |
 
   Each item in packages are defined in http://docs.ansible.com/ansible/bower_module.html
 
