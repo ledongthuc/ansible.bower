@@ -1,7 +1,5 @@
 ---
 - name: Insall git
-  become: yes
-  become_user: root
   package:
     pkg=git
     state=latest
@@ -12,8 +10,6 @@
   register: new_node_path
 
 - name: Create a nodejs binary with new node binary
-  become: yes
-  become_user: root
   file:
     src="{{ old_node_path }}"
     dst="{{ new_node_path }}"
