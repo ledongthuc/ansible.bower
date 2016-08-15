@@ -34,7 +34,7 @@ Role Variables
 Dependencies
 ------------
 
-  ledongthuc.bower
+  Please install NPM before using this role. You can check with https://galaxy.ansible.com/ledongthuc/npm/
 
 Example Playbook
 ----------------

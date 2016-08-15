@@ -1,4 +1,4 @@
-dependencies: [ledongthuc.npm]
+dependencies: []
 galaxy_info:
   author: Thuc Le
   description: Install Bower and trigger to install packages 

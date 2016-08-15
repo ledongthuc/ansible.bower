@@ -5,14 +5,11 @@
     state=latest
     update_cache=yes
 
-- stat:
-    path="{{ new_node_path }}"
+- stat: path="{{ new_node_path }}"
   register: new_node_path
 
 - name: Create a nodejs binary with new node binary
-  file:
-    src="{{ old_node_path }}"
-    dst="{{ new_node_path }}"
+  file: src="{{ old_node_path }}" dst="{{ new_node_path }}"
   when: not new_node_path.stat.exists
 
 - name: Bower install package
