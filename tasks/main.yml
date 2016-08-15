@@ -6,7 +6,7 @@
     update_cache=yes
 
 - name: Create a nodejs binary with new node binary
-  file: src={{ old_node_path }} dest={{ new_node_path }}
+  shell: "ln -s {{ old_node_path }} {{ new_node_path }}"
 
 - name: Bower install package
   bower: path={{ development_path }}
