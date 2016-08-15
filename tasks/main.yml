@@ -18,4 +18,3 @@
     state: "{{ item.state|default(omit) }}"
     version: "{{ item.version|default(omit) }}"
   with_items: "{{ bower_packages }}"
-  when: "{{ bower_packages }}"
