@@ -1,0 +1,7 @@
+---
+- hosts: all 
+  vars:
+    bower_packages:
+    - name: bootstrap
+  roles:
+  - role: ansible.bower

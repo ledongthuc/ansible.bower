@@ -1,0 +1,35 @@
+---
+- name: Insall git
+  become: yes
+  become_user: root
+  package:
+    pkg=git
+    state=latest
+    update_cache=yes
+
+- stat:
+    path="{{ new_node_path }}"
+  register: new_node_path
+
+- name: Create a nodejs binary with new node binary
+  become: yes
+  become_user: root
+  file:
+    src="{{ old_node_path }}"
+    dst="{{ new_node_path }}"
+  when: not new_node_path.stat.exists
+
+- name: Bower install package
+  bower:
+    path="{{ development_path }}"
+
+- name: Install dependencies
+  bower:
+    name:               "{{ item.name|default(omit) }}"
+    offline:            "{{ item.offline|default(omit) }}"
+    path:               "{{ item.path|default(omit) }}"
+    producion:          "{{ item.production|default(omit) }}"
+    relative_execpath:  "{{ item.relative_execpath|default(omit) }}"
+    state:              "{{ item.state|default(omit) }}"
+    version:            "{{ item.version|default(omit) }}"
+  with_items: "{{ bower_packages }}"
