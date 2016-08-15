@@ -17,11 +17,11 @@
 
 - name: Install dependencies
   bower:
-    name:               "{{ item.name|default(omit) }}"
-    offline:            "{{ item.offline|default(omit) }}"
-    path:               "{{ item.path|default(omit) }}"
-    producion:          "{{ item.production|default(omit) }}"
-    relative_execpath:  "{{ item.relative_execpath|default(omit) }}"
-    state:              "{{ item.state|default(omit) }}"
-    version:            "{{ item.version|default(omit) }}"
-  with_items: "{{ bower_packages }}"
+    name: "{{ item.name|default(omit) }}"
+    offline: "{{ item.offline|default(omit) }}"
+    path: "{{ item.path|default(omit) }}"
+    producion: "{{ item.production|default(omit) }}"
+    relative_execpath: "{{ item.relative_execpath|default(omit) }}"
+    state: "{{ item.state|default(omit) }}"
+    version: "{{ item.version|default(omit) }}"
+  with_items: {{ bower_packages }}
